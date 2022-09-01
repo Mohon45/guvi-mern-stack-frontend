@@ -15,9 +15,13 @@ const Register = () => {
     setLoading(true);
     if (data.password === data.password2) {
       axios
-        .post("http://localhost:5001/api/v1/user/signup", data, {
-          headers: { "content-type": "application/json" },
-        })
+        .post(
+          "https://obscure-anchorage-80686.herokuapp.com/api/v1/user/signup",
+          data,
+          {
+            headers: { "content-type": "application/json" },
+          }
+        )
         .then((res) => {
           if (res.status === 200) {
             toast.success("Registration SuccessFully Done!");

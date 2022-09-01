@@ -17,7 +17,9 @@ const Update = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/api/v1/user/${params.email}`)
+      .get(
+        `https://obscure-anchorage-80686.herokuapp.com/api/v1/user/${params.email}`
+      )
       .then((res) => {
         if (res.status === 200) {
           setUserData(res.data.result[0]);
@@ -39,9 +41,13 @@ const Update = () => {
     console.log(data);
     setLoading(true);
     axios
-      .put(`http://localhost:5001/api/v1/user/${userData._id}`, data, {
-        headers: { "content-type": "application/json" },
-      })
+      .put(
+        `https://obscure-anchorage-80686.herokuapp.com/api/v1/user/${userData._id}`,
+        data,
+        {
+          headers: { "content-type": "application/json" },
+        }
+      )
       .then((res) => {
         if (res.status === 200) {
           toast.success("Update SuccessFully Done!");
@@ -110,6 +116,7 @@ const Update = () => {
                         placeholder="enter your title"
                         className="form-control ms-3"
                         id="exampleInputtitle"
+                        required
                       />
                     </div>
                   </div>
@@ -148,6 +155,7 @@ const Update = () => {
                           placeholder="enter your age"
                           className="form-control ms-2"
                           id="exampleInputage"
+                          required
                         />
                       </div>
                     </div>
@@ -166,6 +174,7 @@ const Update = () => {
                           placeholder="enter your Birth Date"
                           className="form-control ms-2"
                           id="exampleInputdob"
+                          required
                         />
                       </div>
                     </div>
@@ -205,6 +214,7 @@ const Update = () => {
                           placeholder="enter your Phone Number"
                           className="form-control ms-2"
                           id="exampleInputphone"
+                          required
                         />
                       </div>
                     </div>
@@ -224,6 +234,7 @@ const Update = () => {
                           placeholder="enter your address"
                           className="form-control ms-2"
                           id="exampleInputaddress"
+                          required
                         />
                       </div>
                     </div>
@@ -242,6 +253,7 @@ const Update = () => {
                           placeholder="enter your Dasignation"
                           className="form-control ms-2"
                           id="exampleInputdesignation"
+                          required
                         />
                       </div>
                     </div>
@@ -260,6 +272,7 @@ const Update = () => {
                           placeholder="enter your Company Name"
                           className="form-control ms-2"
                           id="exampleInputcompany"
+                          required
                         />
                       </div>
                     </div>

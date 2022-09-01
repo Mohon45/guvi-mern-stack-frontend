@@ -14,9 +14,13 @@ const Login = () => {
   const onSubmit = (data) => {
     setLoading(true);
     axios
-      .post("http://localhost:5001/api/v1/user/login", data, {
-        headers: { "content-type": "application/json" },
-      })
+      .post(
+        "https://obscure-anchorage-80686.herokuapp.com/api/v1/user/login",
+        data,
+        {
+          headers: { "content-type": "application/json" },
+        }
+      )
       .then((res) => {
         if (res.status === 200) {
           const email = res.data.email;

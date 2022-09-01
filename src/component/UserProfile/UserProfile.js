@@ -13,7 +13,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/api/v1/user/${email}`)
+      .get(`https://obscure-anchorage-80686.herokuapp.com/api/v1/user/${email}`)
       .then((res) => {
         if (res.status === 200) {
           setUserData(res.data.result[0]);
@@ -35,7 +35,7 @@ const UserProfile = () => {
       {email ? (
         <div
           className="card sign-in-box mx-auto mt-4"
-          style={{ width: "80%", height: "80vh" }}
+          style={{ width: "80%", height: "90vh" }}
         >
           <div className="card-body">
             <div className="text-end">
